@@ -1,0 +1,52 @@
+<app-header></app-header>
+<div class="container bg-image">
+    <div class="padd">
+        <form #homeForm="ngForm" (ngSubmit)="onLogin()">
+            <div class="row num">
+                <div class="col-sm-8">
+                    <!-- <label for="destination" class="btn-primary"> Enter Destination </label>
+                      <input type="text" name="destination" class="form-control" id="destination" placeholder="Enter Destination..." [(ngModel)]="msg"> -->
+                    <!-- <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Dropdown button
+                        </button> -->
+                    <label for="organization" > <h4><b><i>Select Organization Name : &nbsp;</i> </b> </h4></label>
+                    <select name="organization" id="organization" class="custome-select selectForm text-center text-danger OOR" [(ngModel)]="orgId">
+                        <option selected class="text-danger">Select Organization</option>
+                        <option *ngFor=" let org of organizations" value="{{ org.organizationId}}" class="selectItem OOP">{{
+                            org.organizationName }}
+                        </option>
+                    </select>
+                </div>
+                    <div class="col-sm-4 text-center">
+                    <button type="submit" class="btn btn-info" name="Check Availability">Looking For Hotels! Click Me :) </button>
+                </div>
+                
+            </div>
+            
+            <!-- <div class="col-sm-4">
+
+                  <label for="checkin" class="btn-warning"> Check In </label>
+                  <div class="input-group date" data-provide="datepicker">
+                      <input type="date" class="form-control" placeholder="Check In" name="checkin">
+                      <div class="input-group-addon">
+                          <span class="glyphicon glyphicon-th"></span>
+                      </div>
+                  </div>
+
+              </div> -->
+            <!-- <div class="col-sm-4">
+                  <label for="checkout" class="btn-warning"> Check Out </label>
+                  <div class="input-group date" data-provide="datepicker">
+                      <input type="date" class="form-control" placeholder="Check Out" name="checkout">
+                      <div class="input-group-addon">
+                          <span class="glyphicon glyphicon-th"></span>
+                      </div>
+                  </div>
+              </div> -->
+            
+        </form>
+    </div>
+</div>
+<hr>
+<app-footer></app-footer>

@@ -1,0 +1,37 @@
+<app-header></app-header>
+
+<section style="
+background-image: url('https://images.pexels.com/photos/145685/pexels-photo-145685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+<h2 class="text-center" *ngIf="packs.length!=0">Details of All Packages Are!</h2><hr>
+<h2 class="text-center text-danger" *ngIf="packs.length==0">Oops, Sorry No Packages Found</h2><hr>
+<div class="container" style="background-color: aqua;">
+    <div class="row">
+        <form #packForm="ngForm" >
+        <!-- <div *ngFor=" let pac of packs">
+            <h4> {{ pac.packId}}</h4>
+            <h4> {{ pac.packName }}</h4>
+            <h4> {{ pac.packCity }}</h4>
+            <h4> {{ pac.packPrice }}</h4>
+            <h4> {{ pac.packRating }}</h4>
+            <button type="submit" class="btn btn-primary" (click)="onPackDetails( pac.packId)"> Book Now </button>
+            <br> -->
+            <div class="card text-center mb-10" *ngFor="let pac of packs">
+                <div class="card-header">
+                  <h3> Hotel Name : <span class="text-primary"> {{ pac.packName}}</span> </h3>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">Package Id : <span class="text-primary"> {{ pac.packId}}</span> </h4>
+                  <h4 class="card-text">Package City : <span class="text-primary"> {{ pac.packCity}}</span></h4>
+                  <h3> Package Price : <span class="text-primary" >{{ pac.packPrice}}</span></h3>
+                  <button type="submit" class="btn btn-primary" (click)="onPackDetails( pac.packId)"> Book Now </button>
+                </div>
+                <div class="card-footer text-muted"> Package Rating : 
+                  <span class="text-primary"> {{ pac.packRating}} </span>
+                </div>
+            </div>
+            <br>
+        </form>
+    </div>
+</div>
+</section>
+<app-footer></app-footer>

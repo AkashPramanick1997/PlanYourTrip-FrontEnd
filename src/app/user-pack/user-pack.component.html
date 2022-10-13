@@ -1,0 +1,47 @@
+<app-header></app-header>
+<div class="container imgcss">
+    <h3 class="text-primary text-right"> Welcome User : <span class="text-warning"> {{ user.userName}}</span></h3>
+    <div class="col-lg-6 ">
+        <img src="https://img.freepik.com/premium-vector/travel-plan-plane-logo-design-template_549702-122.jpg?w=360">
+
+    </div>
+    <div class="col-lg-6">
+        <h3> <b><i> Confirm Booking Package</i></b></h3><br>
+        <div [hidden]="submitted">
+            <form (ngSubmit)="onSubmit()">
+
+                <div class="row">
+
+                    <div class="col-md-12 form-group">
+                        <label for="checkIn">Chek In </label>
+                        <input type="date" class="form-control" id="checkIn" required name="checkIn" [(ngModel)]="_checkIn">
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-12 form-group">
+                        <label for="checkOut">Chek Out </label>
+                        <input type="date" class="form-control" id="checkOut" required name="checkOut" [(ngModel)]="_checkOut">
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6 form-group">
+                      <label for="numberOfPeople">Number Of People</label>
+                      <input type="number" class="form-control" id="numberOfPeople" required name="numberOfPeople" [(ngModel)]="_numberOfPeople">
+                    </div>
+                    </div>
+                <button type="submit" class="btn btn-success">Book Now</button>
+                <br>
+            </form>
+            <br><br>
+        </div>
+
+        <br>
+
+        <div [hidden]="!submitted">
+            <h4>You submitted successfully!</h4>
+
+        </div>
+    </div>

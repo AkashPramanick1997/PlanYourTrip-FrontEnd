@@ -1,0 +1,33 @@
+<app-header> </app-header>
+<section style="background-color: teal; ">
+  <h2 class="text-center text-info">Bookings Dashboard</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 offser-sm-1 mt">
+        <table class="table table-border table-striped">
+          <thead>
+            <th>Hotel Name</th>
+            <th>Package Name</th>
+            <th>Package City</th>
+            <th>Package Price</th>
+            <th>Check In</th>
+            <th>Check Out</th>
+            <th>Number Of People</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let book of _userPacks">
+              <td>{{ book.pack.hotel.hotelName }}</td>
+              <td>{{ book.pack.packName }}</td>
+              <td>{{ book.pack.packCity }}</td>
+              <td>{{ book.pack.packPrice }}</td>
+              <td>{{ book.checkIn | date: "dd/MM/YYYY" }}</td>
+              <td>{{ book.checkOut | date: "dd/MM/YYYY" }}</td>
+              <td>{{ book.numberOfPeople }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

@@ -1,0 +1,34 @@
+<app-header></app-header>
+<section style="
+background-image: url('https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+">
+    <nav class="navbar">
+        <input class="form-control" type="text" name="city" [(ngModel)]="city" (ngModelChange)="search()"
+            placeholder="Enter City Name To Search">
+    </nav>
+    <div class="container">
+        <div class="text-center text-primary">
+            <h2 *ngIf="hotels.length!=0"><b><i>List Of Hotels Are </i></b> </h2>
+            <h2 *ngIf="hotels.length==0">Oops, Sorry! Hotels Not Found</h2>
+        </div>
+    </div>
+    <div class="container">
+        <form #hotelForm="ngForm">
+            <div *ngFor="let hot of hotels" class="mb-4">
+                <div class="card">
+                    <div class="card-header">Hotel Id : {{hot.hotelId }}
+                    </div>
+                    <div class="card-body">Hotel Name : {{ hot.hotelName }} <br>
+                        Hotel City : {{ hot.hotelCity }} <br>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary" (click)="checkPack(hot.hotelId)">Available
+                            Packages </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<br>
+<app-footer></app-footer>
