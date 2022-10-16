@@ -1,18 +1,18 @@
 .bg-image{
     background-image: url("https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
-    height: 550px;
     background-repeat: no-repeat;
-    background-size: cover;
     width: auto;
-    background-position: center;
+    height: auto;
 }
 .num{
     padding: 10%;
 }
 .padd{
     border-radius: 10px;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: 10%;
+    margin-bottom: 5%;
+    margin-right: 10%;
     height: 50%;
     width: 80%;
     background-color: rgb(232,240,254);

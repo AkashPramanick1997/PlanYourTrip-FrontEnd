@@ -13,6 +13,8 @@
             <th>Check In</th>
             <th>Check Out</th>
             <th>Number Of People</th>
+            <th>Number Of Rooms</th>
+            <th>Total Ammount</th>
           </thead>
           <tbody>
             <tr *ngFor="let book of _userPacks">
@@ -23,6 +25,8 @@
               <td>{{ book.checkIn | date: "dd/MM/YYYY" }}</td>
               <td>{{ book.checkOut | date: "dd/MM/YYYY" }}</td>
               <td>{{ book.numberOfPeople }}</td>
+              <td>{{ book.numberOfRooms}}</td>
+              <td> {{ book.totalAmmount}}</td>
             </tr>
           </tbody>
         </table>

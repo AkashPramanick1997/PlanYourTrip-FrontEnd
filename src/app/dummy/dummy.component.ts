@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var window : any;
 
 @Component({
   selector: 'app-dummy',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DummyComponent implements OnInit {
 
+  formModal : any;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  openModal(){
+    this.formModal.show();
+  }
+
+  doSomething(){
+    this.formModal.hide();
+  }
 }

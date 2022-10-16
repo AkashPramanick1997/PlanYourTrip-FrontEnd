@@ -1,6 +1,7 @@
 <app-header></app-header>
+
 <div class="container imgcss">
-    <h3 class="text-primary text-right"> Welcome User : <span class="text-warning"> {{ user.userName}}</span></h3>
+    <h3 class="text-primary text-right"> Welcome User : <span class="text-warning"> {{ session.userName}}</span></h3>
     <div class="col-lg-6 ">
         <img src="https://img.freepik.com/premium-vector/travel-plan-plane-logo-design-template_549702-122.jpg?w=360">
 
@@ -31,8 +32,12 @@
                       <label for="numberOfPeople">Number Of People</label>
                       <input type="number" class="form-control" id="numberOfPeople" required name="numberOfPeople" [(ngModel)]="_numberOfPeople">
                     </div>
-                    </div>
-                <button type="submit" class="btn btn-success">Book Now</button>
+                    <div class="col-md-6 form-group">
+                        <label for="numberOfPeople">Number Of Rooms</label>
+                        <input type="number" class="form-control" id="numberOfRooms" required name="numberOfRooms" [(ngModel)]="_numberOfRooms">
+                      </div>
+                    </div><br>
+                <button type="submit" class="btn btn-success">Make Payment</button>
                 <br>
             </form>
             <br><br>
@@ -45,3 +50,25 @@
 
         </div>
     </div>
+
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModal()">Close</button>
+          <button type="button" class="btn btn-primary" (click)="payNow()">Pay Now</button>
+        </div>
+      </div>
+    </div>
+  </div>

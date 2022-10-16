@@ -24,6 +24,7 @@ export class BookingsComponent implements OnInit {
     this._bboking_service.getAllBookingByUserId(this.session.userId).subscribe(
       data => {
         this._userPacks = data;
+        console.log(data)
       }
     )
     }

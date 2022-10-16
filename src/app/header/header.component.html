@@ -1,36 +1,61 @@
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-dark bg-dark">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" [routerLink]="['/home']" >PlanYourTrip</a><br>
         <div class="navbar-brand" *ngIf="_registrationService.loggedIn()" >Welcome, {{session.userName}}</div>
       </div>
       <ul class="nav navbar-nav">
-        <li><a [routerLink]="['/home']">Home</a></li>
-        <li><a [routerLink]="['/aboutus']">About Us</a></li>
-        <li><a [routerLink]="['/contactus']">Contact Us</a></li>
+        <li><a class="navbar-brand"[routerLink]="['/home']">Home</a></li>
+        <li><a class="navbar-brand" [routerLink]="['/aboutus']">About Us</a></li>
+        <li><a class="navbar-brand" [routerLink]="['/contactus']">Contact Us</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a [routerLink]="['/registration']" *ngIf="!_registrationService.loggedIn()"
+          <a class="navbar-brand" [routerLink]="['/registration']" *ngIf="!_registrationService.loggedIn()"
             ><span class="glyphicon glyphicon-user"></span> Sign Up</a
           >
         </li>
         <li>
-          <a [routerLink]="['/login']" *ngIf="!_registrationService.loggedIn()"
+          <a class="navbar-brand" [routerLink]="['/login']" *ngIf="!_registrationService.loggedIn()"
             ><span class="glyphicon glyphicon-log-in"></span> Login</a
           >
         </li>
         <li>
-          <a [routerLink]="['/login']" *ngIf="_registrationService.loggedIn()" (click)="_registrationService.logout()"
+          <a class="navbar-brand" [routerLink]="['/login']" *ngIf="_registrationService.loggedIn()" (click)="_registrationService.logout()"
             ><span class="glyphicon glyphicon-log-in"></span> LogOut</a
           >
         </li>
         <li>
-          <a [routerLink]="['/bookings']" *ngIf="_registrationService.loggedIn()"
+          <a class="navbar-brand" [routerLink]="['/bookings']" *ngIf="_registrationService.loggedIn()"
             ><span class="glyphicon glyphicon-shopping-cart"></span> Bookings, Cart</a
           >
         </li>
       </ul>
     </div>
   </nav>
+
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar w/ text</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          Navbar text with an inline element
+        </span>
+      </div>
+    </div>
+  </nav> -->

@@ -2,7 +2,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -16,12 +15,14 @@ import { FooterComponent } from './footer/footer.component';
 import { HotelComponent } from './hotel/hotel.component';
 import { UserPackComponent } from './user-pack/user-pack.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Ng2SearchPipe, Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { BookingsComponent } from './bookings/bookings.component';
 import { DummyComponent } from './dummy/dummy.component';
 import { AuthGuard } from './auth.guard';
-
+import {MatCardModule} from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +47,12 @@ import { AuthGuard } from './auth.guard';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     Ng2SearchPipeModule,
-    Ng2OrderModule
+    Ng2OrderModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatButtonModule,
+
+
   ],
   providers: [ AuthGuard],
   bootstrap: [AppComponent]

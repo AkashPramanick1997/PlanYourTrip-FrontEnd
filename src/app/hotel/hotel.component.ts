@@ -29,7 +29,6 @@ export class HotelComponent implements OnInit {
         this.hotels= data;
       }
     )
-
   }
 
   checkPack( id : any){

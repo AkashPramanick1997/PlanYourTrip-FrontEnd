@@ -1,5 +1,5 @@
 <app-header></app-header>
-<section style="
+<!-- <section style="
 background-image: url('https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 ">
     <nav class="navbar">
@@ -14,7 +14,23 @@ background-image: url('https://images.pexels.com/photos/753626/pexels-photo-7536
     </div>
     <div class="container">
         <form #hotelForm="ngForm">
-            <div *ngFor="let hot of hotels" class="mb-4">
+            <div class="row">
+                <div class="col-sm-3 mb-3" *ngFor="let hot of hotels"> 
+                    <div class="card">
+                        <div class="card-header">Hotel Id : {{hot.hotelId }}
+                        </div>
+                        <div class="card-body">Hotel Name : {{ hot.hotelName }} <br>
+                            Hotel City : {{ hot.hotelCity }} <br>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary" (click)="checkPack(hot.hotelId)">Available
+                                Packages </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div> -->
+            <!-- <div *ngFor="let hot of hotels" class="mb-4">
                 <div class="card">
                     <div class="card-header">Hotel Id : {{hot.hotelId }}
                     </div>
@@ -26,9 +42,32 @@ background-image: url('https://images.pexels.com/photos/753626/pexels-photo-7536
                             Packages </button>
                     </div>
                 </div>
-            </div>
-        </form>
+        </div> -->
+        <!-- </form>
     </div>
-</section>
-<br>
+</section> -->
+<!-- <br> -->
+
+<div class="container">
+    <div class="content">
+        <div fxLayout="row wrap" fxLayoutGap="16px grid">
+            <div *ngFor="let hot of hotels" fxFlex="25%">
+                <mat-card class="pad">
+                    <mat-card-header>
+                        <mat-card-title>
+                            title {{hot.hotelId}}
+                        </mat-card-title>
+                    </mat-card-header>
+                    <img mat-card-image src="https://images.unsplash.com/photo-1615460549969-36fa19521a4f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fGhvdGVsfGVufDB8fDB8fA%3D%3D&w=1000&q=80">
+                    <mat-card-content>
+                        <p>akash Pramanick</p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button>Like</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
 <app-footer></app-footer>

@@ -4,6 +4,7 @@ export class UserPack {
     numberOfPeople : number = 0 ;
     checkIn : Date | undefined ;
     checkOut : Date | undefined;
+    numberOfRooms : number = 0 ; 
     constructor(){
 
     }

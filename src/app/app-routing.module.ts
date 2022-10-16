@@ -23,7 +23,8 @@ const routes: Routes = [
   { path : 'hotels' , component : HotelComponent},
   { path : 'user-pack' , component : UserPackComponent,
             canActivate : [AuthGuard]},
-  { path : 'bookings' , component : BookingsComponent}
+  { path : 'bookings' , component : BookingsComponent},
+  { path : 'dummy' ,  component : DummyComponent}
 
 ];
 

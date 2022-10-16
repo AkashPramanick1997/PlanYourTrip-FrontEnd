@@ -5,6 +5,8 @@ import { Component, OnInit } from '@angular/core';
 import { UserPack } from '../user-pack';
 import { UserPackService } from '../user-pack.service';
 
+declare var window : any;
+
 @Component({
   selector: 'app-user-pack',
   templateUrl: './user-pack.component.html',
@@ -23,8 +25,10 @@ export class UserPackComponent implements OnInit {
 
   _checkIn : Date | undefined;
   _checkOut : Date | undefined;
-  _numberOfPeople :  number =0;
+  _numberOfPeople :  number = 0;
+  _numberOfRooms : number = 0 ;
   _newUserId : number = 0 ;
+  formModal: any;
 
   constructor(private  _login_user_pack_service : LoginUserPackService , 
               private _user_pack_service : UserPackService ,
@@ -38,33 +42,54 @@ export class UserPackComponent implements OnInit {
 
      let data : any = localStorage.getItem('token');
     this.session = JSON.parse(data);
-    console.log(this.session.userId)
+    console.log(this.session.userId);
+    if(this.session == null){
+      this._router.navigate(['/home'])
+    }
   }
 
+  sss : string = "exampleModal"
   onSubmit(){
     
      this._userPack = {
       "userPackId" : 0,
       "numberOfPeople":this._numberOfPeople,
       "checkIn" : this._checkIn,
-      "checkOut" : this._checkOut
+      "checkOut" : this._checkOut,
+      "numberOfRooms" : this._numberOfRooms
     }
 
-    
+    this.formModal = new window.bootstrap.Modal(
+      document.getElementById("exampleModal")
+    );
 
-    console.log(this._userPack)
-    this._newUserId = this.user.userId;
+    this.formModal.show();
+    // console.log(this._userPack)
+    // this._newUserId = this.user.userId;
 
+    // this._user_pack_service.addPackageWithUserId(this._userPack , this._newUserId , this._get_pack_id).subscribe(
+    //    data => {
+    //     console.log("added")
+    //     alert("Booking SuccessFull ! Goto Home Page")
+    //     this._router.navigate(['/home'])
+    //    }
+    // )
+  }
+
+  closeModal(){
+    this.formModal.hide();
+  }
+
+  payNow(){
+
+     this._newUserId = this.user.userId;
     this._user_pack_service.addPackageWithUserId(this._userPack , this._newUserId , this._get_pack_id).subscribe(
        data => {
         console.log("added")
         alert("Booking SuccessFull ! Goto Home Page")
+        this.formModal.hide();
         this._router.navigate(['/home'])
        }
     )
-
-
   }
-
-
 }
